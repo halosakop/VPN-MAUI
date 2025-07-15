@@ -1,5 +1,5 @@
-bin/
-obj/
-Platforms/
+bin/*
+obj/*
+Platforms/*
 *.user
 *.log

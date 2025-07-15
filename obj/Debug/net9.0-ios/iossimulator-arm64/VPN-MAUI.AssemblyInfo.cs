@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VPN-MAUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+04795670ad525b4e4f4a48b9ba0b20010f792f77")]
 [assembly: System.Reflection.AssemblyProductAttribute("VPN-MAUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VPN-MAUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
