@@ -10,8 +10,6 @@
             <ColumnDefinition Width="10*"></ColumnDefinition>
             <ColumnDefinition Width="60*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        
         <Border 
             Grid.Column="0"
             BackgroundColor="NavajoWhite"
@@ -24,6 +22,6 @@
             BackgroundColor="Gray"
             ></Border>
     </Grid>
-    
+
 
 </ContentPage>

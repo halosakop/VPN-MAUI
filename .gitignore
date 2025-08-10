@@ -1,5 +1,4 @@
-bin/*
-obj/*
-Platforms/*
-*.user
-*.log
+bin/
+obj/
+Platforms/
+.idea/
