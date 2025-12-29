@@ -15,11 +15,11 @@ public partial class StartPage : ContentPage
 
     private void VytvoritUcetButton_OnClicked(object? sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//" + nameof(SignInPage));
+        Shell.Current.GoToAsync(nameof(SignInPage));
     }
 
     private void PrihlasenieDoUctuButton_OnClicked(object? sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//" + nameof(LoginPage));
+        Shell.Current.GoToAsync(nameof(LoginPage));
     }
 }

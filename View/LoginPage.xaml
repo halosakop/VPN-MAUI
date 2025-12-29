@@ -4,6 +4,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VPN_MAUI.View.LoginPage">
     <ContentPage.Content>
-        
+        <VerticalStackLayout>
+            <Entry x:Name="MenoLogin" Placeholder="meno"></Entry>
+            <Entry x:Name="HesloLogin" Placeholder="heslo" IsPassword="True"></Entry>
+            <Button x:Name="BtnLogin" Text="prihlasiť sa" Clicked="BtnLogin_OnClicked"></Button>
+            <Button x:Name="BtnNoLogin" Text="späť" Clicked="BtnNoLogin_OnClicked"></Button>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

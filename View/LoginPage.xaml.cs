@@ -12,4 +12,15 @@ public partial class LoginPage : ContentPage
     {
         InitializeComponent();
     }
+
+    private void BtnLogin_OnClicked(object? sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void BtnNoLogin_OnClicked(object? sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//" + nameof(StartPage));
+        
+    }
 }
