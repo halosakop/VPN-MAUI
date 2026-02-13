@@ -13,16 +13,14 @@ public partial class SignInPage : ContentPage
         InitializeComponent();
     }
 
-    private void BtnCreate_OnClicked(object? sender, EventArgs e)
+    private async void BtnCreate_OnClicked(object? sender, EventArgs e)
     {
-        PostgresUpload upload = new PostgresUpload();
-
         string meno = MenoSignIn.Text;
         string heslo = HesloSignIn.Text;
 
-        if (upload != null)
+        if (await PostgresUpload.Upload(meno, heslo))
         {
-            upload(meno, heslo);
+            
         }
     }
 

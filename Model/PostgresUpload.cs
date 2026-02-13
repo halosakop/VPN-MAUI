@@ -3,7 +3,7 @@ using Npgsql;
 
 public class PostgresUpload
 {
-    async static void Upload(string meno,string heslo)
+   public static async Task<bool> Upload(string meno,string heslo)
     {
         var connectionString =
             "Host=91.99.203.50;" +
@@ -18,12 +18,12 @@ public class PostgresUpload
          
         await using (var cmd = connection.CreateCommand("INSERT INTO halovpn_database (meno,heslo,datum_prihlasenia) VALUES (@meno, @heslo,@datum)"))
         { 
-          cmd.Parameters.AddWithValue("meno", "backo");
-          cmd.Parameters.AddWithValue("heslo", "je pan");
+          cmd.Parameters.AddWithValue("meno", meno);
+          cmd.Parameters.AddWithValue("heslo", heslo);
           cmd.Parameters.AddWithValue("datum", DateTime.Now);
           
           await cmd.ExecuteNonQueryAsync();
         }
-
+        return true;
     }
 }
