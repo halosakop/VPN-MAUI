@@ -5,6 +5,9 @@
              x:Class="VPN_MAUI.View.HomePage"
              >
     <ContentPage.Content>
-        
+        <VerticalStackLayout>
+            <Button x:Name="BtnSpustitVpn" Text="VPN" Clicked="Btn_spustitVPN_OnClicked"> </Button>
+            <Button x:Name="BtnSpet" Text="späť" Clicked="Btn_spet_OnClicked"></Button>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

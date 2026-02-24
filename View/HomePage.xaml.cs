@@ -12,4 +12,14 @@ public partial class HomePage : ContentPage
     {
         InitializeComponent();
     }
+
+    private void Btn_spustitVPN_OnClicked(object? sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void Btn_spet_OnClicked(object? sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//" + nameof(StartPage));
+    }
 }

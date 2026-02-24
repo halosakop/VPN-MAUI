@@ -20,7 +20,7 @@ public partial class SignInPage : ContentPage
 
         if (await PostgresUpload.Upload(meno, heslo))
         {
-            
+            await Shell.Current.GoToAsync(nameof(HomePage));
         }
     }
 

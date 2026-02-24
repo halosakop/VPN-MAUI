@@ -4,7 +4,7 @@ using Npgsql;
 public class PostgresUpload
 {
    public static async Task<bool> Upload(string meno,string heslo)
-    {
+   {
         var connectionString =
             "Host=91.99.203.50;" +
             "Port=5432;" +
@@ -24,6 +24,7 @@ public class PostgresUpload
           
           await cmd.ExecuteNonQueryAsync();
         }
+
         return true;
     }
 }
