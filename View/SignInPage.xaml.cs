@@ -16,8 +16,10 @@ public partial class SignInPage : ContentPage
     private async void BtnCreate_OnClicked(object? sender, EventArgs e)
     {
         string meno = MenoSignIn.Text;
-        string heslo = HesloSignIn.Text;
-
+        
+        var hasher = new HashSignIn();
+        string heslo = await hasher.Hash(HesloSignIn.Text);
+        
         if (await PostgresUpload.Upload(meno, heslo))
         {
             await Shell.Current.GoToAsync(nameof(HomePage));
