@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using VPN_MAUI.Model;
+using WebKit;
 
 namespace VPN_MAUI.View;
 
@@ -18,15 +20,14 @@ public partial class LoginPage : ContentPage
     {
         string meno = MenoLogin.Text;
         string heslo = HesloLogin.Text;
-
+        
         if (await PostgresLogin.Login(meno, heslo))
         {
            await Shell.Current.GoToAsync(nameof(HomePage));
         }
         else
         {
-            LabelError.Text = "Zlé meno alebo heslo. Zkúste to znovu.";
-            LabelError.IsVisible = true;
+            DisplayAlert("", "Nesprávne prihlasovacie údaje", "OK");
         }
     }
 

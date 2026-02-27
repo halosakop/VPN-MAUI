@@ -9,7 +9,6 @@
             <Entry x:Name="HesloLogin" Placeholder="heslo" IsPassword="True"></Entry>
             <Button x:Name="BtnLogin" Text="prihlásiť sa" Clicked="BtnLogin_OnClicked"></Button>
             <Button x:Name="BtnNoLogin" Text="späť" Clicked="BtnNoLogin_OnClicked"></Button>
-            <Label x:Name="LabelError" Text="" IsVisible="False" HorizontalTextAlignment="Center" TextColor="Red"></Label>
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
