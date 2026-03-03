@@ -34,7 +34,7 @@ public partial class HomePage : ContentPage
         try
         {
 
-            string goFolder = "/Users/path/GolandProjects/haloVPN";
+            string goFolder = "/Users/path/to/client.go;
             string binaryName = "myvpn";
             string fullCommand = $"cd \"{goFolder}\" && ./{binaryName}";
 
