@@ -18,7 +18,7 @@ public partial class HomePage : ContentPage
     {
         Process vpnProcess = new System.Diagnostics.Process();
         vpnProcess.StartInfo.FileName = "/bin/bash";
-        vpnProcess.StartInfo.Arguments = "-c \"sudo go run client.go -server 91.99.203.50:51820 \"";
+        vpnProcess.StartInfo.Arguments = "-c \"sudo go run client.go \"";
         vpnProcess.StartInfo.UseShellExecute = false;
         vpnProcess.StartInfo.RedirectStandardOutput = true;
         vpnProcess.Start();
@@ -27,5 +27,15 @@ public partial class HomePage : ContentPage
     private void Btn_spet_OnClicked(object? sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//" + nameof(StartPage));
+    }
+
+    private void BtnZastavitVpn_OnClicked(object? sender, EventArgs e)
+    {
+            Process vpnProcess = new System.Diagnostics.Process();
+            vpnProcess.StartInfo.FileName = "/bin/bash";
+            vpnProcess.StartInfo.Arguments = "-c \"sudo pkill -f client.go\"";
+            vpnProcess.StartInfo.UseShellExecute = false;
+            vpnProcess.StartInfo.RedirectStandardOutput = true;
+            vpnProcess.Start();
     }
 }
