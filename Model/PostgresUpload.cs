@@ -6,11 +6,11 @@ public class PostgresUpload
    public static async Task<bool> Upload(string meno,string heslo)
    {
         var connectionString =
-            "Host=91.99.203.50;" +
+            "Host=server IP;" +
             "Port=5432;" +
             "Database=postgres;" +
             "Username=postgres;" +
-            "Password=halovpn;" +
+            "Password=password;" +
             "SSL Mode=Require;" +
             "Trust Server Certificate=true";
 
