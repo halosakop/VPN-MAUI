@@ -6,11 +6,11 @@ public class PostgresLogin
     public static async Task<bool> Login(string meno, string heslo)
     {
         var connectionString = 
-            "Host=91.99.203.50;"+
+            "Host=serverIP;"+
             "Port=5432;"+
             "Database=postgres;"+
             "Username=postgres;"+
-            "Password=halovpn;"+
+            "Password=password;"+
             "SSL Mode=Require;"+
             "Trust Server Certificate=true";
         await using var connection = NpgsqlDataSource.Create(connectionString);
