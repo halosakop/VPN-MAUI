@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,12 @@ public partial class HomePage : ContentPage
 
     private void Btn_spustitVPN_OnClicked(object? sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        Process vpnProcess = new System.Diagnostics.Process();
+        vpnProcess.StartInfo.FileName = "/bin/bash";
+        vpnProcess.StartInfo.Arguments = "-c \"sudo go run client.go -server 91.99.203.50:51820 \"";
+        vpnProcess.StartInfo.UseShellExecute = false;
+        vpnProcess.StartInfo.RedirectStandardOutput = true;
+        vpnProcess.Start();
     }
 
     private void Btn_spet_OnClicked(object? sender, EventArgs e)
