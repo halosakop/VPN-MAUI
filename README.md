@@ -16,5 +16,7 @@ For working login system you need to configure your database credentials for Pos
             "SSL Mode=Require;" +
             "Trust Server Certificate=true";
 ```
-
-
+In file HomePage.xamal.cs chang the file path to client.go
+```
+string goFolder = "/Users/path/to/client.go;
+```
