@@ -6,11 +6,21 @@ public partial class AppShell : Shell
 {
 	public AppShell()
 	{
-		InitializeComponent();
-		
+		try
+		{
+			InitializeComponent();
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine(ex.Message); 
+		}
 		Routing.RegisterRoute(nameof(StartPage), typeof(StartPage));
 		Routing.RegisterRoute(nameof(SignInPage), typeof(SignInPage));
 		Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
 		Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
 	}
-}
+
+		
+
+	}
+
