@@ -9,7 +9,6 @@
     Title="VPN_MAUI">
 
     <ShellContent
-        Title="StartPage"
         ContentTemplate="{DataTemplate view:StartPage}"
         Route="StartPage" />
 

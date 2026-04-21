@@ -9,13 +9,39 @@
             <Setter Property="TextColor" Value="White"></Setter>
             <Setter Property="BackgroundColor" Value="#00e5ff"></Setter>
         </Style>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="FontSize" Value="70"></Setter>
+        </Style>
+
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <VerticalStackLayout>
-                <Button x:Name="VytvoritUcetButton" Text="Vytvoriť účet" Clicked="VytvoritUcetButton_OnClicked"></Button>
-                <Button x:Name="PrihlasenieDoUctuButton" Text="Prihlásiť sa" Clicked="PrihlasenieDoUctuButton_OnClicked" ></Button>
-            </VerticalStackLayout>
-        </ScrollView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Grid.ColumnSpan="2"  
+                    Width="150"
+                    >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Label Grid.ColumnSpan="2" 
+                       Text="HaloVPN" >
+                </Label>
+            </Border>
+            <!--
+            <Button x:Name="VytvoritUcetButton" Text="Vytvoriť účet" Clicked="VytvoritUcetButton_OnClicked" Grid.Column="0"></Button>
+            <Button x:Name="PrihlasenieDoUctuButton" Text="Prihlásiť sa" Clicked="PrihlasenieDoUctuButton_OnClicked" Grid.Column="1"></Button>
+            -->
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
