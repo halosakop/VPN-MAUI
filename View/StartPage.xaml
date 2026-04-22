@@ -6,9 +6,14 @@
              BackgroundColor="Black">
     <ContentPage.Resources>
         <Style TargetType="Button">
-            <Setter Property="FontAttributes" Value="Bold"></Setter>
             <Setter Property="TextColor" Value="White"></Setter>
             <Setter Property="BackgroundColor" Value="#00e5ff"></Setter>
+            <Setter Property="HeightRequest" Value="100"></Setter>
+            <Setter Property="WidthRequest" Value="350"></Setter>
+            <Setter Property="CornerRadius" Value="25"></Setter>
+            <Setter Property="Margin" Value="0,0,0,250"></Setter>
+            <Setter Property="FontSize" Value="50"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
         </Style>
         <Style TargetType="Label">
             <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
@@ -17,8 +22,8 @@
             <Setter Property="TextColor" Value="White"></Setter>
             <Setter Property="FontSize" Value="70"></Setter>
         </Style>
-
     </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -29,17 +34,38 @@
                 <RowDefinition Height="200"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-                <Image 
-                    Grid.ColumnSpan="2"
-                    Source="Resources/photos/Screenshot 2026-04-22 at 11.09.40.png"></Image>
-                <Label Grid.ColumnSpan="2" 
-                       Text="HaloVPN"
-                       TextColor="#00E5FF">
-                </Label>
-            <!--
-            <Button x:Name="VytvoritUcetButton" Text="Vytvoriť účet" Clicked="VytvoritUcetButton_OnClicked" Grid.Column="0"></Button>
-            <Button x:Name="PrihlasenieDoUctuButton" Text="Prihlásiť sa" Clicked="PrihlasenieDoUctuButton_OnClicked" Grid.Column="1"></Button>
-            -->
+            
+            <Image 
+                Grid.ColumnSpan="2"
+                Source="logo.png"
+                WidthRequest="70"
+                HeightRequest="70"
+                Margin="0,0,400,0"
+                HorizontalOptions="Center"/>
+            
+            <Label Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Grid.Column="0"
+                   Text="HaloVPN"
+                   TextColor="#00E5FF"/>
+            
+            <Button x:Name="VytvoritUcetButton"
+                    Text="Vytvoriť účet"
+                    Clicked="VytvoritUcetButton_OnClicked"
+                    Grid.Column="0"
+                    Grid.Row="1"/>
+            
+            <Button x:Name="PrihlasenieDoUctuButton"
+                    Text="Prihlásiť sa"
+                    Clicked="PrihlasenieDoUctuButton_OnClicked"
+                    Grid.Column="1"
+                    Grid.Row="1">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer
+                        PointerEntered="PointerGestureRecognizer_OnPointerEntered"
+                        PointerExited="PointerGestureRecognizer_OnPointerExited"/>
+                </Button.GestureRecognizers>
+            </Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,5 +22,15 @@ public partial class StartPage : ContentPage
     private void PrihlasenieDoUctuButton_OnClicked(object? sender, EventArgs e)
     {
         Shell.Current.GoToAsync(nameof(LoginPage));
+    }
+
+    private void PointerGestureRecognizer_OnPointerEntered(object? sender, PointerEventArgs e)
+    {
+        PrihlasenieDoUctuButton.TextColor = Colors.Black;
+    }
+
+    private void PointerGestureRecognizer_OnPointerExited(object? sender, PointerEventArgs e)
+    {
+        PrihlasenieDoUctuButton.TextColor = Colors.White;
     }
 }
