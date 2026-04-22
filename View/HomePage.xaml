@@ -3,12 +3,59 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VPN_MAUI.View.HomePage"
-             >
+             BackgroundColor="Black">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="BackgroundColor" Value="#00e5ff"></Setter>
+            <Setter Property="HeightRequest" Value="100"></Setter>
+            <Setter Property="WidthRequest" Value="350"></Setter>
+            <Setter Property="CornerRadius" Value="25"></Setter>
+            <Setter Property="FontSize" Value="50"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="0,150,0,0"></Setter>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <VerticalStackLayout>
-            <Button x:Name="BtnSpustitVpn" Text="Spustit VPN" Clicked="Btn_spustitVPN_OnClicked"> </Button>
-            <Button x:Name="BtnZastavitVpn" Text="zastaviť VPN" Clicked="BtnZastavitVpn_OnClicked"> </Button>
-            <Button x:Name="BtnSpet" Text="späť" Clicked="Btn_spet_OnClicked"></Button>
-        </VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BtnSpustitVpn" 
+                    Text="Spustit VPN" 
+                    Clicked="Btn_spustitVPN_OnClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer
+                        PointerEntered="PointerGestureRecognizer_OnPointerEntered"
+                        PointerExited="PointerGestureRecognizer_OnPointerExited"/>
+                </Button.GestureRecognizers>
+            </Button>
+            <Button x:Name="BtnZastavitVpn"
+                    Text="zastaviť VPN"
+                    Clicked="BtnZastavitVpn_OnClicked"
+                    Grid.Column="1">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer
+                        PointerEntered="PointerGestureRecognizer2_OnPointerEntered"
+                        PointerExited="PointerGestureRecognizer2_OnPointerExited"/>
+                </Button.GestureRecognizers>
+            </Button>
+            <Button x:Name="BtnSpet"
+                    Text="späť" 
+                    Clicked="Btn_spet_OnClicked"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer
+                        PointerEntered="PointerGestureRecognizer3_OnPointerEntered"
+                        PointerExited="PointerGestureRecognizer3_OnPointerExited"/>
+                </Button.GestureRecognizers>
+            </Button>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

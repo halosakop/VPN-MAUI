@@ -95,4 +95,34 @@ public partial class HomePage : ContentPage
     {
         return path.Replace("\"", "\\\"").Replace(" ", "\\ ");
     }
+
+    private void PointerGestureRecognizer_OnPointerEntered(object? sender, PointerEventArgs e)
+    {
+        BtnSpustitVpn.TextColor = Colors.Black;
+    }
+
+    private void PointerGestureRecognizer_OnPointerExited(object? sender, PointerEventArgs e)
+    {
+        BtnSpustitVpn.TextColor = Colors.White;
+    }
+
+    private void PointerGestureRecognizer2_OnPointerEntered(object? sender, PointerEventArgs e)
+    {
+        BtnZastavitVpn.TextColor = Colors.Black;
+    }
+
+    private void PointerGestureRecognizer2_OnPointerExited(object? sender, PointerEventArgs e)
+    {
+        BtnZastavitVpn.TextColor = Colors.White;
+    }
+
+    private void PointerGestureRecognizer3_OnPointerEntered(object? sender, PointerEventArgs e)
+    {
+        BtnSpet.TextColor = Colors.Black;
+    }
+
+    private void PointerGestureRecognizer3_OnPointerExited(object? sender, PointerEventArgs e)
+    {
+        BtnSpet.TextColor = Colors.White;
+    }
 }
