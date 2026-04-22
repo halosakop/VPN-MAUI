@@ -16,13 +16,21 @@ public partial class SignInPage : ContentPage
     private async void BtnCreate_OnClicked(object? sender, EventArgs e)
     {
         string meno = MenoSignIn.Text;
-        
+        string heslo1 = HesloSignIn.Text;
+        string heslo2 = HesloOverenie.Text;
         var hasher = new HashSignIn();
         string heslo = await hasher.Hash(HesloSignIn.Text);
-        
-        if (await PostgresUpload.Upload(meno, heslo))
+
+        if (heslo1 == heslo2)
         {
-            await Shell.Current.GoToAsync(nameof(HomePage));
+            if (await PostgresUpload.Upload(meno, heslo)) 
+            {
+                await Shell.Current.GoToAsync(nameof(HomePage));
+            }
+        }
+        else
+        {
+            await DisplayAlertAsync("", "Zadané heslá sa nezhodujú", "OK");
         }
     }
 
