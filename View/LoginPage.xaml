@@ -2,13 +2,87 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VPN_MAUI.View.LoginPage">
+             x:Class="VPN_MAUI.View.LoginPage"
+             BackgroundColor="Black">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="BackgroundColor" Value="#00e5ff"></Setter>
+            <Setter Property="HeightRequest" Value="100"></Setter>
+            <Setter Property="WidthRequest" Value="350"></Setter>
+            <Setter Property="CornerRadius" Value="25"></Setter>
+            <Setter Property="Margin" Value="0,0,0,250"></Setter>
+            <Setter Property="FontSize" Value="50"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="HeightRequest" Value="100"></Setter>
+            <Setter Property="WidthRequest" Value="350"></Setter>
+            <Setter Property="BackgroundColor" Value="Grey"></Setter>
+            <Setter Property="TextColor" Value="Black"></Setter>
+            <Setter Property="PlaceholderColor" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="HeightRequest" Value="100"></Setter>
+            <Setter Property="WidthRequest" Value="350"></Setter>
+        </Style>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <VerticalStackLayout>
-            <Entry x:Name="MenoLogin" Placeholder="meno"></Entry>
-            <Entry x:Name="HesloLogin" Placeholder="heslo" IsPassword="True"></Entry>
-            <Button x:Name="BtnLogin" Text="prihlásiť sa" Clicked="BtnLogin_OnClicked"></Button>
-            <Button x:Name="BtnNoLogin" Text="späť" Clicked="BtnNoLogin_OnClicked"></Button>
-        </VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border
+                StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45,45,45,45"/>
+                </Border.StrokeShape>
+                <Entry x:Name="MenoLogin" 
+                       Placeholder="meno"></Entry>
+            </Border>
+            <Border
+                StrokeThickness="2"
+                Grid.Column="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45,45,45,45"/>
+                </Border.StrokeShape>
+                <Entry x:Name="HesloLogin" 
+                       Grid.Column="1"
+                       Placeholder="heslo" 
+                       IsPassword="True"></Entry>
+            </Border>
+            
+            <Button x:Name="BtnLogin"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="prihlásiť sa"
+                    Clicked="BtnLogin_OnClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer
+                        PointerEntered="PointerGestureRecognizer2_OnPointerEntered"
+                        PointerExited="PointerGestureRecognizer2_OnPointerExited"/>
+                    
+                </Button.GestureRecognizers>
+            </Button>
+            <Button x:Name="BtnNoLogin"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="späť"
+                    Clicked="BtnNoLogin_OnClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer
+                        PointerEntered="PointerGestureRecognizer_OnPointerEntered"
+                        PointerExited="PointerGestureRecognizer_OnPointerExited"/>
+                </Button.GestureRecognizers>
+            </Button>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

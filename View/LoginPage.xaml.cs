@@ -31,4 +31,24 @@ public partial class LoginPage : ContentPage
     {
         Shell.Current.GoToAsync("//" + nameof(StartPage));
     }
+
+    private void PointerGestureRecognizer_OnPointerEntered(object? sender, PointerEventArgs e)
+    {
+        BtnNoLogin.TextColor = Colors.Black;
+    }
+
+    private void PointerGestureRecognizer_OnPointerExited(object? sender, PointerEventArgs e)
+    {
+        BtnNoLogin.TextColor = Colors.White;
+    }
+
+    private void PointerGestureRecognizer2_OnPointerEntered(object? sender, PointerEventArgs e)
+    {
+        BtnLogin.TextColor = Colors.Black;
+    }
+
+    private void PointerGestureRecognizer2_OnPointerExited(object? sender, PointerEventArgs e)
+    {
+        BtnLogin.TextColor = Colors.White;
+    }
 }
