@@ -68,4 +68,8 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.41"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Resources\photos\" />
+    </ItemGroup>
+
 </Project>

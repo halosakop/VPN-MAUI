@@ -6,7 +6,8 @@
     xmlns:local="clr-namespace:VPN_MAUI"
     xmlns:view="clr-namespace:VPN_MAUI.View"
     Shell.FlyoutBehavior="Disabled"
-    Title="VPN_MAUI">
+    Title="HaloVPN"
+    BackgroundColor="Black">
 
     <ShellContent
         ContentTemplate="{DataTemplate view:StartPage}"
