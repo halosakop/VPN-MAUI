@@ -22,6 +22,16 @@
             <Setter Property="TextColor" Value="White"></Setter>
             <Setter Property="FontSize" Value="70"></Setter>
         </Style>
+        <Style x:Key="Odkaz" TargetType="Button">
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="BackgroundColor" Value="Grey"></Setter>
+            <Setter Property="HeightRequest" Value="50"></Setter>
+            <Setter Property="WidthRequest" Value="170"></Setter>
+            <Setter Property="CornerRadius" Value="25"></Setter>
+            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="0,190, 0,0"></Setter>
+        </Style>
     </ContentPage.Resources>
     
     <ContentPage.Content>
@@ -53,7 +63,13 @@
                     Text="Vytvoriť účet"
                     Clicked="VytvoritUcetButton_OnClicked"
                     Grid.Column="0"
-                    Grid.Row="1"/>
+                    Grid.Row="1">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer 
+                        PointerEntered="PointerGestureRecognizer2_OnPointerEntered"
+                        PointerExited="PointerGestureRecognizer2_OnPointerExited"/>
+                </Button.GestureRecognizers>
+            </Button>
             
             <Button x:Name="PrihlasenieDoUctuButton"
                     Text="Prihlásiť sa"
@@ -64,6 +80,20 @@
                     <PointerGestureRecognizer
                         PointerEntered="PointerGestureRecognizer_OnPointerEntered"
                         PointerExited="PointerGestureRecognizer_OnPointerExited"/>
+                </Button.GestureRecognizers>
+            </Button>
+            
+            <Button Style="{StaticResource Odkaz}"
+                    x:Name="ViacInfoButton"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Text="Zistiť viac"
+                    Clicked="Button_ViacInfo_OnClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer
+                        PointerEntered="PointerGestureRecognizer3_OnPointerEntered"
+                        PointerExited="PointerGestureRecognizer3_OnPointerExited"/>
                 </Button.GestureRecognizers>
             </Button>
         </Grid>
