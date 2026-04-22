@@ -56,16 +56,16 @@ public partial class HomePage : ContentPage
 
             if (_vpnProcess.ExitCode != 0)
             {
-                await DisplayAlert("Error", $"Failed to start VPN:\n\n{error}\n\nOutput:\n{output}", "OK");
+                await DisplayAlert("Chyba", $"Nepodarilo sa spustit VPN:\n\n{error}\n\nOutput:\n{output}", "OK");
             }
             else
             {
-                await DisplayAlert("Success", "VPN started successfully!\n\n" + output, "OK");
+                await DisplayAlert("Spustenie VPN", "VPN sa podarilo spustiť !\n\n" + output, "OK");
             }
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Exception", ex.Message, "OK");
+            await DisplayAlert("bez", ex.Message, "OK");
         }
     }
 
@@ -75,19 +75,19 @@ public partial class HomePage : ContentPage
         {
             if (_vpnProcess == null || _vpnProcess.HasExited)
             {
-                await DisplayAlert("Info", "VPN is not running.", "OK");
+                await DisplayAlert("Info", "VPN neni spustená.", "OK");
                 return;
             }
 
             _vpnProcess.Kill();
             await _vpnProcess.WaitForExitAsync();
 
-            await DisplayAlert("Success", "VPN stopped.", "OK");
+            await DisplayAlert("Pozastavenie VPN", "VPN bola pozastavená.", "OK");
             _vpnProcess = null;
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", $"Exception: {ex.Message}", "OK");
+            await DisplayAlert("Chyba", $"Chyba: {ex.Message}", "OK");
         }
     }
 
